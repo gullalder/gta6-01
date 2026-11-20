@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>VICE HARBOR — A city with a price</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <canvas id="world"></canvas>
+    <div id="vignette"></div>
+    <div id="hud" class="hidden">
+      <header>
+        <div class="brand">
+          VICE<span>HARBOR</span><small>LEON COAST · FREE ROAM</small>
+        </div>
+        <div class="status">
+          <div id="stars">☆☆☆☆☆</div>
+          <div><b id="cash">$250</b><span id="clock">18:42</span></div>
+          <div class="health"><i id="health"></i></div>
+          <small id="healthText">100 / 100 HEALTH</small>
+        </div>
+      </header>
+      <section id="objective">
+        <small id="missionTag">01 / THE OPENING HAND</small>
+        <h2 id="missionTitle">Borrowed sunshine</h2>
+        <p id="missionText">Find the coral coupe on Ocean Avenue.</p>
+        <div id="missionDistance"></div>
+      </section>
+      <div id="toast"></div>
+      <div id="prompt"></div>
+      <div id="district"><small>NOW ENTERING</small><b>PALM STRIP</b></div>
+      <div id="radio">
+        <small>✦ HARBOR RADIO / MARA</small>
+        <p id="dialogue"></p>
+      </div>
+      <div id="mapFrame">
+        <canvas id="minimap" width="220" height="190"></canvas>
+        <div><span id="districtMini">PALM STRIP</span><b>N ↑</b></div>
+      </div>
+      <div id="drive">
+        <b id="speed">ON FOOT</b
+        ><small id="vehicleName">RIVER VALE · RUNNER</small>
+      </div>
+      <footer>
+        WASD <span>MOVE / DRIVE</span> &nbsp; SHIFT
+        <span>RUN / HANDBRAKE</span> &nbsp; E <span>ENTER / EXIT</span> &nbsp;
+        MOUSE <span>AIM / FIRE</span> &nbsp; TAB <span>MAP</span> &nbsp; P
+        <span>PAUSE</span> &nbsp; M <span>SOUND</span>
+      </footer>
+    </div>
+    <div id="menu">
+      <div class="menuCard">
+        <div class="eyebrow">AN ORIGINAL OPEN-WORLD CRIME STORY</div>
+        <h1>VICE<br /><em>HARBOR</em></h1>
+        <div class="rule"></div>
+        <h3>A city with a price.<br />A driver with nothing to lose.</h3>
+        <p class="intro">
+          Sunset on the Leon Coast. Mara has three jobs,<br />a stolen ledger,
+          and a way out. You have the keys.
+        </p>
+        <button id="start">NEW GAME <span>↗</span></button
+        ><button id="continue" class="secondary">
+          CONTINUE SAVED STORY <span>→</span>
+        </button>
+        <div class="menuControls">
+          WASD · MOVE & DRIVE &nbsp; E · TAKE THE WHEEL<br />MOUSE · AIM & SHOOT
+          &nbsp; SHIFT · SPRINT / HANDBRAKE<br />TAB · CITY MAP &nbsp; P · PAUSE
+          &nbsp; M · MUTE &nbsp; F · SAVE AT ANY TIME
+        </div>
+        <small class="offline"
+          >4 DISTRICTS &nbsp; / &nbsp; 3 STORY JOBS &nbsp; / &nbsp; ONE LONG
+          NIGHT</small
+        >
+      </div>
+      <div class="menuBadge">
+        LEON<br />COAST<span>18:42 / GOLDEN HOUR</span>
+      </div>
+    </div>
+    <div id="pause" class="overlay hidden">
+      <div>
+        <small>TAKE A BREATH</small>
+        <h1>ON HOLD.</h1>
+        <p>Your city will wait.</p>
+        <button id="resume">RESUME →</button
+        ><button id="save">SAVE PROGRESS</button>
+        <p id="saveMessage">P or Escape to resume · M toggles sound</p>
+      </div>
+    </div>
+    <div id="cityMap" class="overlay hidden">
+      <div class="mapCard">
+        <small>LEON COAST / CITY DIRECTORY</small>
+        <h2>Know your way out.</h2>
+        <canvas id="cityMapCanvas" width="900" height="620"></canvas>
+        <p>
+          ◆ OBJECTIVE &nbsp; ▲ YOU &nbsp; + MARA’S GARAGE &nbsp; ● POLICE &nbsp;
+          · &nbsp; TAB / ESC TO CLOSE
+        </p>
+      </div>
+    </div>
+    <div id="death" class="overlay hidden">
+      <div>
+        <small>LEON COAST EMERGENCY SERVICES</small>
+        <h1 id="deathTitle">FLATLINED.</h1>
+        <p id="deathText"></p>
+        <button id="respawn">BACK TO THE STREETS →</button>
+      </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+  </body>
+</html>
