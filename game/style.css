@@ -1,0 +1,431 @@
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #102a31;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+canvas#world {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+button {
+  cursor: pointer;
+  font: 700 14px Arial;
+  letter-spacing: 2px;
+  border: 0;
+  background: #f6c567;
+  color: #17292c;
+  padding: 19px 23px;
+  text-align: left;
+  min-width: 290px;
+  display: block;
+  margin: 12px 0;
+}
+button span {
+  float: right;
+}
+button:hover {
+  background: #ffe2a3;
+  transform: translateX(3px);
+}
+button.secondary {
+  background: transparent;
+  border: 1px solid #ffffff55;
+  color: #fff;
+  padding: 15px 22px;
+  font-size: 11px;
+}
+.hidden {
+  display: none !important;
+}
+#vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 160px #091c2a77;
+}
+#hud {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+header {
+  position: absolute;
+  left: 34px;
+  right: 34px;
+  top: 26px;
+  display: flex;
+  justify-content: space-between;
+}
+.brand {
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 12px #000;
+}
+.brand span {
+  color: #f5b475;
+  margin-left: 4px;
+}
+.brand small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-top: 6px;
+  font-weight: 400;
+}
+.status {
+  text-align: right;
+  width: 195px;
+  text-shadow: 0 2px 5px #000;
+}
+#stars {
+  font-size: 29px;
+  letter-spacing: 5px;
+  color: #ffd581;
+  height: 36px;
+}
+.status b {
+  font-size: 23px;
+  letter-spacing: 1px;
+}
+.status #clock {
+  font-size: 12px;
+  margin-left: 20px;
+  color: #dbd9c8;
+}
+.health {
+  height: 5px;
+  background: #ffffff35;
+  margin-top: 10px;
+}
+.health i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #83d5b2;
+}
+.status small {
+  font-size: 9px;
+  letter-spacing: 2px;
+  display: block;
+  margin-top: 6px;
+}
+#objective {
+  position: absolute;
+  left: 34px;
+  top: 112px;
+  border-left: 3px solid #f4c878;
+  background: linear-gradient(90deg, #10282eed, #10282e99);
+  padding: 17px 23px;
+  width: 340px;
+  box-shadow: 0 8px 30px #0002;
+}
+#objective small {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #f5c67c;
+}
+#objective h2 {
+  font-size: 22px;
+  margin: 9px 0 7px;
+}
+#objective p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #e1e7dc;
+  margin: 0;
+}
+#missionDistance {
+  font-size: 10px;
+  letter-spacing: 2px;
+  margin-top: 12px;
+  color: #9bdfc9;
+}
+#mapFrame {
+  position: absolute;
+  bottom: 58px;
+  left: 34px;
+  width: 232px;
+  background: #10292de8;
+  border: 1px solid #d8dfc23b;
+  padding: 5px;
+  box-shadow: 0 4px 28px #0005;
+}
+#minimap {
+  display: block;
+  width: 220px;
+  height: 190px;
+}
+#mapFrame div {
+  padding: 8px 5px 4px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: space-between;
+  color: #bdd7c5;
+}
+#drive {
+  position: absolute;
+  bottom: 75px;
+  left: 288px;
+  text-shadow: 0 2px 5px #000;
+}
+#drive b {
+  font-size: 30px;
+  display: block;
+  font-style: italic;
+}
+#drive small {
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+footer {
+  position: absolute;
+  bottom: 17px;
+  left: 34px;
+  right: 34px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-shadow: 0 1px 4px #000;
+}
+footer span {
+  color: #c4d1c6;
+}
+#radio {
+  position: absolute;
+  bottom: 80px;
+  right: 34px;
+  width: 330px;
+  background: #10282eea;
+  padding: 18px 22px;
+  border-top: 2px solid #79cdb6;
+}
+#radio small {
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #79cdb6;
+}
+#radio p {
+  font-size: 13px;
+  line-height: 1.55;
+  margin: 10px 0 0;
+}
+#prompt {
+  position: absolute;
+  left: 50%;
+  top: 67%;
+  transform: translateX(-50%);
+  background: #10282eeb;
+  color: #fff;
+  padding: 12px 22px;
+  border: 1px solid #d4bc7e55;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: none;
+}
+#toast {
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #132c32ed;
+  padding: 15px 26px;
+  border-bottom: 2px solid #f6c567;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: none;
+}
+#district {
+  position: absolute;
+  right: 35px;
+  top: 180px;
+  text-align: right;
+  text-shadow: 0 2px 10px #000;
+}
+#district small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #e8c785;
+}
+#district b {
+  font-size: 25px;
+  font-style: italic;
+  letter-spacing: 2px;
+  display: block;
+  margin-top: 5px;
+}
+#menu {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #0b202bf5 0%,
+    #102631ed 30%,
+    #10263166 62%,
+    #10263111
+  );
+  display: flex;
+  align-items: center;
+}
+.menuCard {
+  margin-left: 7vw;
+}
+.eyebrow {
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #98d5c6;
+}
+h1 {
+  font-size: clamp(64px, 7.7vw, 108px);
+  letter-spacing: -6px;
+  line-height: 0.85;
+  margin: 25px 0;
+  color: #fff;
+  font-weight: 900;
+}
+h1 em {
+  font-style: normal;
+  color: #f4b37f;
+}
+.rule {
+  height: 4px;
+  width: 65px;
+  background: #f2c77f;
+  margin: 27px 0;
+}
+.menuCard h3 {
+  font-size: 20px;
+  line-height: 1.3;
+  font-weight: 400;
+  margin: 0 0 15px;
+}
+.intro {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #a8c0c3;
+  margin-bottom: 22px;
+}
+.menuControls {
+  font-size: 10px;
+  line-height: 2;
+  letter-spacing: 1px;
+  color: #a8c0c3;
+  margin-top: 22px;
+}
+.offline {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #f4b37f;
+  margin-top: 22px;
+}
+.menuBadge {
+  position: absolute;
+  right: 6%;
+  bottom: 12%;
+  text-align: right;
+  font-size: 66px;
+  line-height: 0.85;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -3px;
+  color: #fff9;
+}
+.menuBadge span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-top: 20px;
+  font-style: normal;
+  color: #fae1b4;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: #0b202be8;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  backdrop-filter: blur(7px);
+}
+.overlay h1 {
+  font-size: 80px;
+  margin: 30px 0;
+  letter-spacing: -4px;
+}
+.overlay small {
+  color: #f6c567;
+  letter-spacing: 4px;
+  font-size: 11px;
+}
+.overlay p {
+  color: #bed1cc;
+  font-size: 14px;
+}
+.overlay button {
+  margin: 18px auto;
+}
+#saveMessage {
+  font-size: 11px;
+}
+@media (max-height: 700px) {
+  .menuCard h1 {
+    font-size: 76px;
+  }
+  .menuCard .intro {
+    margin-bottom: 10px;
+  }
+  .rule {
+    margin: 18px 0;
+  }
+  .menuControls {
+    margin-top: 14px;
+  }
+  .offline {
+    margin-top: 10px;
+  }
+  .menuCard h3 {
+    font-size: 17px;
+  }
+  .menuCard button {
+    padding: 14px 20px;
+  }
+  #objective {
+    top: 105px;
+  }
+}
+
+.mapCard h2 {
+  font-size: 30px;
+  font-style: italic;
+  margin: 12px 0 15px;
+}
+.mapCard canvas {
+  display: block;
+  width: min(80vw, 900px);
+  max-height: 70vh;
+  object-fit: contain;
+  border: 1px solid #c9d5b544;
+  background: #173941;
+}
+.mapCard p {
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+#cityMap {
+  background: #0b202bf5;
+}
+.mapCard small {
+  font-size: 9px;
+}
