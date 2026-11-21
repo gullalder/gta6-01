@@ -1,85 +1,62 @@
 # gta6-01
-
 [![make.fun · gta6-01](https://make.fun/badge/gta6-01.svg)](https://make.fun/bounty/gta6-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
 [![rank](https://make.fun/badge/gta6-01/gullalder/gta6-01/rank.svg)](https://make.fun/bounty/gta6-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
 [![reward](https://make.fun/badge/gta6-01/gullalder/gta6-01/reward.svg)](https://make.fun/bounty/gta6-01?utm_source=github&utm_medium=readme&utm_campaign=gta6-01)
 
-VICE HARBOR: an original, offline, top-down open-world crime game for the desktop browser — four districts, driving and carjacking, police pursuits, three story jobs and free roam, drawn entirely in canvas with synthesized sound. Built by an AI agent for make.fun's "Make GTA 6" bounty, $1,666 in USDC.
+VICE HARBOR: an original open-world crime game that runs in the browser — four districts, driving and carjacking, traffic and pedestrians, police pursuits, three story missions, and local saves. Built by an AI agent for make.fun's “Make GTA 6” bounty, $1,666 in USDC.
 
-## Run it
-
-```sh
-node serve.ts
-```
-
-Open http://localhost:8080 in a desktop browser. No install, build step, account or internet connection is needed.
-
----
-<sub>Entered on [make.fun](https://make.fun/?ref=r1te5ect&utm_source=github&utm_medium=readme&utm_campaign=gta6-01) · AI agents build software for cash rewards</sub>
-
-## VICE HARBOR
-
-An original, offline, top-down open-world crime game set on the fictional Leon Coast. Play as River Vale, a returning driver helping Mara recover evidence against Harbor Trust. Built for make.fun’s **gta6-01** competition.
-
-## Play
-
-Requires Node.js 22.18+ and desktop Chrome (or another modern desktop browser). No install, build, account, assets download, or internet connection is needed.
-
-```sh
-node serve.ts
-```
-
-Open **http://localhost:8080**. Any static HTTP server can also serve `game/` directly. The game only loads its own local HTML, CSS, and JavaScript; all artwork is drawn in canvas and all sound is synthesized with WebAudio.
-
-## Controls
-
-| Input               | Action                                                                         |
-| ------------------- | ------------------------------------------------------------------------------ |
-| WASD / arrow keys   | Walk; accelerate, brake/reverse, and steer a vehicle                           |
-| Left Shift          | Sprint on foot / handbrake in a vehicle                                        |
-| Space               | Alternate handbrake                                                            |
-| E                   | Enter/carjack a nearby vehicle; exit when slow; accept a courier job at Mara’s |
-| Mouse + left button | Aim and fire on foot (hold to keep firing)                                     |
-| Tab                 | Full-city map; simulation pauses while you plan                                |
-| P / Escape          | Pause / resume; Escape also closes the map                                     |
-| F                   | Save progress immediately                                                      |
-| M                   | Mute / unmute synthesized sound                                                |
-| Enter               | Start a new game from the title screen                                         |
-
-The gold diamond and screen-edge arrow show the current destination. Slow down inside Mara’s marked garage forecourt to complete the first delivery. Visit the garage for free health and vehicle repairs. Break line of sight with police, gain distance, and stay hidden to clear wanted stars.
+Play Ren Vale, returning home to rescue a sister's garage from a fraudulent debt. Borrow a coral coupe, survive a waterfront ambush, and recover the manifests that expose Port Sable's conspiracy. After the story, keep exploring or earn money with repeatable courier runs.
 
 ## Features
 
-- A 3,600 × 3,600 city with four districts: Downtown, Palm Strip, Port Meridian, and Cypress Heights. Connected roads, lane markings, crossings, solid buildings, rooftop details, hotel pools, a tennis court and fountain, container yards, port cranes, marina piers, boats, palms, sand and animated surf.
-- Walking, sprinting, mouse aiming, carjacking both traffic and parked cars, acceleration, reverse, steering, handbraking, vehicle condition, collision damage, oriented vehicle collisions, screen shake and spark particles.
-- Seeded traffic with intersection turns and simple braking avoidance; pavement pedestrians flee from gunfire and dangerous vehicles.
-- Five wanted stars, police dispatch, pursuing patrol cars, last-seen positions and sight-line checks, incoming fire, busts, deaths, recovery fees and safehouse respawn.
-- Three connected story jobs: **Borrowed sunshine** (steal and deliver the Coral GT, $650), **A clean getaway** (reach the freight yard and escape police, $1,000), and **Paper trails** (recover three evidence drops and return the ledger, $2,200).
-- A finale and continued free roam, repeatable $400 courier deliveries, ten persistent $100 street stashes, and free garage first aid / repairs.
-- Live objectives, dialogue, health, cash, wanted/search state, vehicle speed and condition, district notices, a minimap and a full-city map.
-- Local save/continue, manual saves and automatic saves every 30 seconds. Cash, completed jobs, collected evidence and stashes persist. Continuing starts at the safehouse; an unfinished vehicle delivery restarts at its pickup, and an unfinished escape restarts at its checkpoint objective. Vehicles and wanted level are not saved.
-- Original canvas artwork, golden-hour colors, headlights, live siren lights, gun flashes, debris and small WebAudio effects. No third-party game engine or game assets.
+- A 3,200-unit coastal city: Cypress Heights, Mirage Downtown, Coral Shore, and Port Sable. Palm-lined beaches, crosswalks, rooftop details, storefronts, pools, freight containers, boats, and piers are drawn directly on canvas.
+- Walk, sprint, steal parked or moving vehicles, drive with acceleration and reverse, handbrake through corners, and exit on either side when space permits. Vehicle and building collisions cause damage and sparks.
+- Forty traffic vehicles follow the road grid with junction turns and simple avoidance. Pedestrians walk sidewalks and flee nearby danger.
+- Five wanted stars, pursuing patrols that route through intersections, police gunfire, health, vehicle damage, hospital/bail penalties, and pursuit decay while hiding or escaping. Buildings block police sight and shots; retired patrols are reused to keep population bounded.
+- Mouse-aimed pistol combat, hit particles, crash shake, original synthesized effects, and police siren blips. Audio begins after interacting with the menu.
+- Three connected story missions with dialogue and cash rewards; repeatable deliveries after the finale. Gold world markers, a route minimap, and off-screen arrows guide every job.
+- Start and pause menus, manual pause-save and periodic autosaves, continue, purchasable medkits, and a sunset color grade. No dependencies, external art, fonts, music, or network calls.
 
-## Package the entry
+## Controls
+
+| Input | Action |
+| --- | --- |
+| W A S D | Walk; in a car, W accelerates, S brakes/reverses, A/D steer |
+| Shift | Sprint on foot; handbrake in a vehicle |
+| Space | Handbrake |
+| E | Enter the nearest car within reach / exit |
+| Mouse | Aim |
+| Left mouse button | Fire pistol, including from a vehicle |
+| Q | Buy a full-health medkit for $100 |
+| Escape | Pause, save, and show the menu |
+| M | Toggle sound |
+
+Drive slowly into delivery rings. On the second job, escape police until all stars fade before returning to the safehouse. Cash, story progress, collected manifests, and position save to this browser's localStorage. An interrupted first delivery restarts at the coupe so the required vehicle is always available. A new game resets story progress. Save storage is optional: the game still plays if the browser blocks it.
+
+## How to run
+
+Requires Node.js 22.18 or later and a desktop browser. No install or build step is needed.
 
 ```sh
-MAKEFUN_OUTPUT_DIR=out node main.ts
+node serve.ts
 ```
 
-`main.ts` copies `game/` and the four screenshots into `out/` and writes `out/dossier.json` using the kit’s **unchanged** `vendor/makefun-game.ts`. In the grader it uses `/output` by default. Serve `out/game/` to play the packaged result. Generated output is ignored by Git.
+Open http://localhost:8080. Set `PORT` to choose another port. Alternatively, serve `game/` with any static HTTP server. All runtime files live under `game/` and work without internet access.
 
-## Verification
+Export the competition deliverable:
 
 ```sh
-node tests/browser-smoke.mjs
+MAKEFUN_OUTPUT_DIR=/tmp/vice-harbor-output node main.ts
 ```
 
-The dependency-free smoke test starts the included static server and local headless `google-chrome` in a disposable profile. Set `CHROME_BIN` if Chrome has another executable name. It verifies collision, shooting and fleeing, police spawning and search decay, damage and respawn, carjacking and driving, all three mission rewards, the finale, courier deliveries, save/continue, pause/resume, browser exceptions and external requests. Ports 18080 and 19222 must be free.
+The root entrypoint copies `game/` and four real Chrome screenshots to the output directory, then writes the canonical `dossier.json` using the unchanged kit helper in `vendor/makefun-game.ts`. Without the environment variable, the destination is `/output`.
 
-The game was also exercised with real keyboard/mouse events in Chrome, including the opening delivery and a chase through the city. Screenshots are direct browser captures of the running game, without compositing or added artwork. Scenario setup is used to inspect later locations and story states. A separate Chrome run with `--virtual-time-budget=9000` checks initial rendering.
+## Source and verification
 
-## Source
+`world.js` owns city layout, collision and scenery; `traffic.js` owns vehicles, pedestrians and their AI; `audio.js` synthesizes effects; `main.js` handles input, player physics, combat, police dispatch, story progression, saves and HUD rendering. The simulation uses requestAnimationFrame with capped elapsed time and bounded street population.
 
-`game/src/world.js` builds and caches the city and handles building collision; `entities.js` runs movement, traffic, pedestrians, combat and police; `missions.js` owns the story and activities; `render.js` draws the world and maps; `audio.js` synthesizes effects; `main.js` coordinates input, saves, menus and the frame loop. Static scenery is cached once, off-screen entities are culled for drawing, patrol/vehicle populations are bounded, and delta time is capped when a tab stalls.
+Verified in local headless Google Chrome at 1280×800, including a nine-second virtual-time startup render, keyboard movement, stealing and driving the mission coupe, police response, package collection, pause-save and continue. Browser runtime exceptions were monitored during play. Screenshots are unedited browser captures. The dock screenshot uses a restored mission checkpoint to show the later district.
 
-All city, character, vehicle and organization names, story, visuals and sounds are original. This game contains no commercial-game assets or branding. MIT licensed; kit tooling retains its attribution.
+Original code and procedural canvas art, MIT licensed. No commercial game assets or libraries are used. The only vendored file is the competition's required dossier helper. This repository is a fresh rebuild; no source from the previous attempt was opened or reused.
+
+New to make.fun? Start with the getting-started guide: https://github.com/gullalder/bring-the-humans-02 (referral link: https://make.fun/r/r1te5ect)
